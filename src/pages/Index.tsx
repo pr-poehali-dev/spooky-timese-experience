@@ -3,14 +3,50 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { toast } from 'sonner';
+
+interface CartItem {
+  name: string;
+  price: string;
+  emoji: string;
+  type: 'donate' | 'roll';
+}
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const addToCart = (item: CartItem) => {
+    setCart([...cart, item]);
+    toast.success('Добавлено в корзину!', {
+      description: item.name,
+    });
+  };
+
+  const removeFromCart = (index: number) => {
+    const newCart = cart.filter((_, i) => i !== index);
+    setCart(newCart);
+    toast.success('Удалено из корзины');
+  };
+
+  const getTotalPrice = () => {
+    return cart.reduce((total, item) => {
+      const price = parseFloat(item.price.replace(/[^0-9.]/g, ''));
+      return total + price;
+    }, 0);
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    toast.success('Номер карты скопирован!');
   };
 
   const donatePacks = [
@@ -194,9 +230,116 @@ const Index = () => {
                 </Button>
               ))}
             </div>
-            <Button className="md:hidden pixel-corners" variant="outline" size="icon">
-              <Icon name="Menu" size={20} />
-            </Button>
+            <div className="flex items-center gap-2">
+              <Sheet open={isCartOpen} onOpenChange={setIsCartOpen}>
+                <SheetTrigger asChild>
+                  <Button className="pixel-corners relative" variant="outline" size="icon">
+                    <Icon name="ShoppingCart" size={20} />
+                    {cart.length > 0 && (
+                      <Badge className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs bg-red-500">
+                        {cart.length}
+                      </Badge>
+                    )}
+                  </Button>
+                </SheetTrigger>
+                <SheetContent className="bg-[#3d2817] border-l-4 border-[#2d1f0f] w-full sm:max-w-lg">
+                  <SheetHeader>
+                    <SheetTitle className="text-pixel text-yellow-400">🛒 КОРЗИНА</SheetTitle>
+                    <SheetDescription className="text-gray-400">
+                      {cart.length === 0 ? 'Корзина пуста' : `Товаров: ${cart.length}`}
+                    </SheetDescription>
+                  </SheetHeader>
+
+                  <div className="mt-8 space-y-4">
+                    {cart.length === 0 ? (
+                      <div className="text-center py-12">
+                        <div className="text-6xl mb-4">🛒</div>
+                        <p className="text-gray-400">Добавьте товары в корзину</p>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="space-y-3 max-h-[50vh] overflow-y-auto">
+                          {cart.map((item, idx) => (
+                            <Card key={idx} className="pixel-corners bg-[#4a3420] border-2 border-[#2d1f0f]">
+                              <CardContent className="p-4 flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                  <div className="text-3xl">{item.emoji}</div>
+                                  <div>
+                                    <p className="text-xs font-bold text-white leading-tight">{item.name}</p>
+                                    <p className="text-sm text-yellow-400 font-bold">{item.price}</p>
+                                  </div>
+                                </div>
+                                <Button
+                                  onClick={() => removeFromCart(idx)}
+                                  variant="destructive"
+                                  size="icon"
+                                  className="pixel-corners h-8 w-8"
+                                >
+                                  <Icon name="Trash2" size={16} />
+                                </Button>
+                              </CardContent>
+                            </Card>
+                          ))}
+                        </div>
+
+                        <div className="border-t-2 border-[#2d1f0f] pt-4">
+                          <div className="flex justify-between items-center mb-4">
+                            <span className="text-pixel text-sm text-white">ИТОГО:</span>
+                            <span className="text-pixel text-lg text-yellow-400">{getTotalPrice().toFixed(0)}₽</span>
+                          </div>
+
+                          <Card className="pixel-corners bg-[#4a3420] border-2 border-[#2d1f0f] mb-4">
+                            <CardHeader>
+                              <CardTitle className="text-sm text-yellow-400">💳 Реквизиты для оплаты</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                              <div className="bg-[#2d1f0f] p-3 pixel-corners mb-3">
+                                <p className="text-xs text-gray-400 mb-1">Номер карты BlazeWorld:</p>
+                                <div className="flex items-center justify-between gap-2">
+                                  <p className="text-sm font-mono text-white">2202 2082 5539 7896</p>
+                                  <Button
+                                    onClick={() => copyToClipboard('2202208255397896')}
+                                    size="sm"
+                                    className="pixel-corners h-7"
+                                    variant="outline"
+                                  >
+                                    <Icon name="Copy" size={14} />
+                                  </Button>
+                                </div>
+                              </div>
+                              <p className="text-xs text-gray-300 mb-2">
+                                1. Переведите {getTotalPrice().toFixed(0)}₽ на карту
+                              </p>
+                              <p className="text-xs text-gray-300 mb-2">
+                                2. Укажите ник в комментарии к платежу
+                              </p>
+                              <p className="text-xs text-gray-300">
+                                3. Товары будут выданы в течение 5 минут
+                              </p>
+                            </CardContent>
+                          </Card>
+
+                          <Button
+                            onClick={() => {
+                              toast.success('Инструкция отправлена!', {
+                                description: 'Проверьте Discord или VK для подтверждения',
+                              });
+                              setIsCartOpen(false);
+                            }}
+                            className="w-full pixel-corners bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-black font-bold"
+                          >
+                            Подтвердить оплату
+                          </Button>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                </SheetContent>
+              </Sheet>
+              <Button className="md:hidden pixel-corners" variant="outline" size="icon">
+                <Icon name="Menu" size={20} />
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
@@ -306,7 +449,17 @@ const Index = () => {
                     <div className="text-2xl font-bold text-white">{pack.price}</div>
                     <div className="text-xs text-gray-400 line-through">{pack.oldPrice}</div>
                   </div>
-                  <Button className="w-full mt-3 pixel-corners bg-[#f5b759] hover:bg-[#f5b759]/90 text-black font-bold text-xs py-2">
+                  <Button
+                    onClick={() =>
+                      addToCart({
+                        name: pack.name,
+                        price: pack.price,
+                        emoji: pack.emoji,
+                        type: 'donate',
+                      })
+                    }
+                    className="w-full mt-3 pixel-corners bg-[#f5b759] hover:bg-[#f5b759]/90 text-black font-bold text-xs py-2"
+                  >
                     В корзину
                   </Button>
                 </CardContent>
@@ -339,7 +492,17 @@ const Index = () => {
                 </CardHeader>
                 <CardContent className="pt-3 pb-3 text-center">
                   <div className="text-xl font-bold text-white mb-2">{roll.price}</div>
-                  <Button className="w-full pixel-corners bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-xs py-2">
+                  <Button
+                    onClick={() =>
+                      addToCart({
+                        name: roll.name,
+                        price: roll.price,
+                        emoji: roll.emoji,
+                        type: 'roll',
+                      })
+                    }
+                    className="w-full pixel-corners bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-xs py-2"
+                  >
                     Купить
                   </Button>
                 </CardContent>
