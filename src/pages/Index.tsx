@@ -149,21 +149,21 @@ const Index = () => {
   const unbanPack = { name: 'РАЗБАН', price: '349₽', emoji: '🔓', color: 'from-red-600 to-orange-600' };
 
   const videoRolls = [
-    { name: '345.000 РОЛИКОВ', price: '25₽', emoji: '🎬', color: 'from-pink-500 to-rose-500' },
-    { name: '523.000 РОЛИКОВ', price: '35₽', emoji: '🎥', color: 'from-violet-500 to-purple-500' },
-    { name: '789.000 РОЛИКОВ', price: '45₽', emoji: '📹', color: 'from-blue-500 to-indigo-500' },
-    { name: '1.234.000 РОЛИКОВ', price: '55₽', emoji: '🎞️', color: 'from-cyan-500 to-teal-500' },
-    { name: '1.876.000 РОЛИКОВ', price: '65₽', emoji: '📺', color: 'from-green-500 to-emerald-500' },
-    { name: '2.543.000 РОЛИКОВ', price: '75₽', emoji: '🎬', color: 'from-yellow-500 to-amber-500' },
-    { name: '3.421.000 РОЛИКОВ', price: '85₽', emoji: '🎥', color: 'from-orange-500 to-red-500' },
-    { name: '4.567.000 РОЛИКОВ', price: '95₽', emoji: '📹', color: 'from-fuchsia-500 to-pink-500' },
-    { name: '5.789.000 РОЛИКОВ', price: '105₽', emoji: '🎞️', color: 'from-purple-600 to-violet-600' },
-    { name: '6.934.000 РОЛИКОВ', price: '125₽', emoji: '📺', color: 'from-indigo-600 to-blue-600' },
-    { name: '8.123.000 РОЛИКОВ', price: '145₽', emoji: '🎬', color: 'from-sky-600 to-cyan-600' },
-    { name: '9.456.000 РОЛИКОВ', price: '165₽', emoji: '🎥', color: 'from-teal-600 to-green-600' },
-    { name: '10.789.000 РОЛИКОВ', price: '185₽', emoji: '📹', color: 'from-lime-600 to-yellow-600' },
-    { name: '11.234.000 РОЛИКОВ', price: '205₽', emoji: '🎞️', color: 'from-amber-600 to-orange-600' },
-    { name: '12.565.000 РОЛИКОВ', price: '235₽', emoji: '📺', color: 'from-red-600 to-rose-600' },
+    { name: '345.000 РИЛИКОВ', price: '25₽', emoji: '🎬', color: 'from-pink-500 to-rose-500' },
+    { name: '523.000 РИЛИКОВ', price: '35₽', emoji: '🎥', color: 'from-violet-500 to-purple-500' },
+    { name: '789.000 РИЛИКОВ', price: '45₽', emoji: '📹', color: 'from-blue-500 to-indigo-500' },
+    { name: '1.234.000 РИЛИКОВ', price: '55₽', emoji: '🎞️', color: 'from-cyan-500 to-teal-500' },
+    { name: '1.876.000 РИЛИКОВ', price: '65₽', emoji: '📺', color: 'from-green-500 to-emerald-500' },
+    { name: '2.543.000 РИЛИКОВ', price: '75₽', emoji: '🎬', color: 'from-yellow-500 to-amber-500' },
+    { name: '3.421.000 РИЛИКОВ', price: '85₽', emoji: '🎥', color: 'from-orange-500 to-red-500' },
+    { name: '4.567.000 РИЛИКОВ', price: '95₽', emoji: '📹', color: 'from-fuchsia-500 to-pink-500' },
+    { name: '5.789.000 РИЛИКОВ', price: '105₽', emoji: '🎞️', color: 'from-purple-600 to-violet-600' },
+    { name: '6.934.000 РИЛИКОВ', price: '125₽', emoji: '📺', color: 'from-indigo-600 to-blue-600' },
+    { name: '8.123.000 РИЛИКОВ', price: '145₽', emoji: '🎬', color: 'from-sky-600 to-cyan-600' },
+    { name: '9.456.000 РИЛИКОВ', price: '165₽', emoji: '🎥', color: 'from-teal-600 to-green-600' },
+    { name: '10.789.000 РИЛИКОВ', price: '185₽', emoji: '📹', color: 'from-lime-600 to-yellow-600' },
+    { name: '11.234.000 РИЛИКОВ', price: '205₽', emoji: '🎞️', color: 'from-amber-600 to-orange-600' },
+    { name: '12.565.000 РИЛИКОВ', price: '235₽', emoji: '📺', color: 'from-red-600 to-rose-600' },
   ];
 
   const teamMembers = [
@@ -575,9 +575,9 @@ const Index = () => {
           </div>
 
           <div className="text-center mb-12">
-            <h2 className="text-pixel text-2xl md:text-4xl text-yellow-400 mb-4">🎬 ПОКУПКА РОЛИКОВ</h2>
+            <h2 className="text-pixel text-2xl md:text-4xl text-yellow-400 mb-4">🎬 ПОКУПКА РИЛИКОВ</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Получи рандомные ролики для своего контента! Цены от 25₽ до 235₽
+              Получи рандомные рилики для своего контента! Цены от 25₽ до 235₽
             </p>
           </div>
 
