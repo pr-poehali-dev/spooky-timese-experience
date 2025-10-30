@@ -168,10 +168,8 @@ const Index = () => {
 
   const teamMembers = [
     { name: 'MrDomer', role: 'Владелец', avatar: '👑' },
-    { name: 'Steve', role: 'Главный администратор', avatar: '👨‍💼' },
-    { name: 'Alex', role: 'Тех. администратор', avatar: '👩‍💻' },
-    { name: 'Enderman', role: 'Модератор', avatar: '👾' },
-    { name: 'Creeper', role: 'Хелпер', avatar: '💚' },
+    { name: 'Zenu_987_Tyer', role: 'Владелец', avatar: '👑' },
+    { name: 'Mentos228', role: 'GL.ADMIN', avatar: '👨‍💼' },
   ];
 
   const rules = [
