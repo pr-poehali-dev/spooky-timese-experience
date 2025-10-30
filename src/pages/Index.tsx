@@ -678,35 +678,23 @@ const Index = () => {
             <h2 className="text-pixel text-2xl md:text-4xl text-yellow-400 mb-8">📞 КОНТАКТЫ</h2>
             <Card className="pixel-corners bg-[#4a3420] border-4 border-[#2d1f0f]">
               <CardContent className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex justify-center">
                   <a
-                    href="https://discord.gg/rellyworld"
+                    href="https://discord.gg/uSTFSVgER"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-[#5865F2] pixel-corners hover:scale-105 transition-transform"
+                    className="flex items-center gap-4 p-4 bg-[#5865F2] pixel-corners hover:scale-105 transition-transform w-full max-w-md"
                   >
                     <Icon name="MessageCircle" size={32} className="text-white" />
                     <div className="text-left">
                       <p className="font-bold text-white">Discord</p>
-                      <p className="text-xs text-gray-200">discord.gg/rellyworld</p>
-                    </div>
-                  </a>
-                  <a
-                    href="https://vk.com/rellyworld"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-[#0077FF] pixel-corners hover:scale-105 transition-transform"
-                  >
-                    <Icon name="Users" size={32} className="text-white" />
-                    <div className="text-left">
-                      <p className="font-bold text-white">ВКонтакте</p>
-                      <p className="text-xs text-gray-200">vk.com/rellyworld</p>
+                      <p className="text-xs text-gray-200">discord.gg/uSTFSVgER</p>
                     </div>
                   </a>
                 </div>
                 <div className="mt-6 p-4 bg-black/30 pixel-corners">
                   <p className="text-sm text-gray-300">
-                    По всем вопросам пишите в Discord или ВК. Мы всегда на связи! 💬
+                    По всем вопросам пишите в Discord. Мы всегда на связи! 💬
                   </p>
                 </div>
               </CardContent>
