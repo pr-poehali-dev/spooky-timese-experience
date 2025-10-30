@@ -140,6 +140,12 @@ const Index = () => {
     },
   ];
 
+  const kitPacks = [
+    { name: 'КИТ NUTSONCIKA', price: '99₽', emoji: '💎', color: 'from-purple-500 to-pink-500' },
+    { name: 'КИТ АЛМАЗНЫЙ', price: '55₽', emoji: '💠', color: 'from-cyan-500 to-blue-500' },
+    { name: 'КИТ ЖЕЛЕЗКА', price: '25₽', emoji: '⚙️', color: 'from-gray-400 to-gray-600' },
+  ];
+
   const videoRolls = [
     { name: '345.000 РОЛИКОВ', price: '25₽', emoji: '🎬', color: 'from-pink-500 to-rose-500' },
     { name: '523.000 РОЛИКОВ', price: '35₽', emoji: '🎥', color: 'from-violet-500 to-purple-500' },
@@ -463,6 +469,45 @@ const Index = () => {
 
       <section className="py-20 bg-gradient-to-b from-[#1a3a0d] to-[#2d5016]">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-pixel text-2xl md:text-4xl text-yellow-400 mb-4">🎁 ПОКУПКА КИТОВ</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Получи крутые стартовые наборы для игры! От железного до легендарного 💎
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+            {kitPacks.map((kit, idx) => (
+              <Card
+                key={idx}
+                className="pixel-corners bg-[#4a3420] border-4 border-[#2d1f0f] hover:scale-105 transition-transform duration-200 relative overflow-hidden"
+              >
+                <CardHeader className={`bg-gradient-to-br ${kit.color} pixel-corners relative`}>
+                  <div className="text-center">
+                    <div className="text-6xl mb-3">{kit.emoji}</div>
+                    <CardTitle className="text-sm font-bold text-white mb-2 leading-tight">{kit.name}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-4 pb-4 text-center">
+                  <div className="text-3xl font-bold text-white mb-3">{kit.price}</div>
+                  <Button
+                    onClick={() =>
+                      addToCart({
+                        name: kit.name,
+                        price: kit.price,
+                        emoji: kit.emoji,
+                        type: 'donate',
+                      })
+                    }
+                    className="w-full pixel-corners bg-[#f5b759] hover:bg-[#f5b759]/90 text-black font-bold text-sm py-2"
+                  >
+                    В корзину
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
           <div className="text-center mb-12">
             <h2 className="text-pixel text-2xl md:text-4xl text-yellow-400 mb-4">🎬 ПОКУПКА РОЛИКОВ</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
