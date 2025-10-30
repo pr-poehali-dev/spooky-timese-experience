@@ -146,6 +146,8 @@ const Index = () => {
     { name: 'КИТ ЖЕЛЕЗКА', price: '25₽', emoji: '⚙️', color: 'from-gray-400 to-gray-600' },
   ];
 
+  const unbanPack = { name: 'РАЗБАН', price: '349₽', emoji: '🔓', color: 'from-red-600 to-orange-600' };
+
   const videoRolls = [
     { name: '345.000 РОЛИКОВ', price: '25₽', emoji: '🎬', color: 'from-pink-500 to-rose-500' },
     { name: '523.000 РОЛИКОВ', price: '35₽', emoji: '🎥', color: 'from-violet-500 to-purple-500' },
@@ -535,6 +537,41 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="text-center mb-12">
+            <h2 className="text-pixel text-2xl md:text-4xl text-red-400 mb-4">🔓 РАЗБАН</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Получил бан? Купи разбан и продолжи игру на сервере! ⚠️
+            </p>
+          </div>
+
+          <div className="max-w-md mx-auto mb-16">
+            <Card className="pixel-corners bg-[#4a3420] border-4 border-red-600 hover:scale-105 transition-transform duration-200 relative overflow-hidden">
+              <CardHeader className={`bg-gradient-to-br ${unbanPack.color} pixel-corners relative`}>
+                <div className="text-center">
+                  <div className="text-7xl mb-3">{unbanPack.emoji}</div>
+                  <CardTitle className="text-lg font-bold text-white mb-2 leading-tight">{unbanPack.name}</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent className="pt-4 pb-4 text-center">
+                <div className="text-4xl font-bold text-white mb-4">{unbanPack.price}</div>
+                <Button
+                  onClick={() =>
+                    addToCart({
+                      name: unbanPack.name,
+                      price: unbanPack.price,
+                      emoji: unbanPack.emoji,
+                      type: 'donate',
+                    })
+                  }
+                  className="w-full pixel-corners bg-red-500 hover:bg-red-600 text-white font-bold text-lg py-3"
+                >
+                  Купить разбан
+                </Button>
+                <p className="text-xs text-gray-400 mt-3">⚠️ Укажите ник при оплате!</p>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="text-center mb-12">
