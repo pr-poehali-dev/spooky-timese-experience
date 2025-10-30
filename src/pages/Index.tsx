@@ -438,7 +438,16 @@ const Index = () => {
                   <CardDescription className="text-xs text-gray-400">{item.date}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-gray-200">{item.content}</p>
+                  <p className="text-sm text-gray-200 mb-3">{item.content}</p>
+                  {idx === 0 && (
+                    <Button
+                      onClick={() => window.open('https://t.me/nyrislam222', '_blank')}
+                      className="w-full pixel-corners bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-bold text-xs"
+                    >
+                      <Icon name="Send" className="mr-2" size={16} />
+                      Подписаться на канал
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
