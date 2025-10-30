@@ -388,7 +388,7 @@ const Index = () => {
               McBlazeWorld
             </h1>
             <p className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-lg">
-              Лучший выживание сервер Minecraft 1.21
+              Лучший выживание сервер Minecraft 1.16.5
               <br />
               Заходи и начни своё приключение прямо сейчас! 🎮
             </p>
