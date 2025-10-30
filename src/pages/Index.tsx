@@ -212,7 +212,7 @@ const Index = () => {
               <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-700 pixel-corners flex items-center justify-center">
                 <span className="text-2xl">⛏️</span>
               </div>
-              <span className="text-pixel text-sm md:text-base text-yellow-400">RELLY WORLD</span>
+              <span className="text-pixel text-sm md:text-base text-yellow-400">McBlazeWorld</span>
             </div>
             <div className="hidden md:flex gap-2">
               {['home', 'donate', 'rules', 'team', 'contacts'].map((section) => (
@@ -357,7 +357,7 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="animate-fade-in">
             <h1 className="text-pixel text-3xl md:text-5xl lg:text-6xl text-yellow-400 mb-6 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
-              RELLY WORLD
+              McBlazeWorld
             </h1>
             <p className="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-lg">
               Лучший выживание сервер Minecraft 1.21
@@ -367,7 +367,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <div className="bg-black/80 px-6 py-3 pixel-corners border-2 border-green-500">
                 <p className="text-xs text-green-400 mb-1">IP СЕРВЕРА:</p>
-                <p className="text-pixel text-sm md:text-base text-white">play.rellyworld.ru</p>
+                <p className="text-pixel text-sm md:text-base text-white">McBlazeworld.aternos.me</p>
               </div>
               <Badge className="bg-green-500 text-black text-lg px-4 py-2 pixel-corners">
                 <Icon name="Users" size={16} className="mr-2" />
@@ -604,7 +604,7 @@ const Index = () => {
 
       <footer className="bg-[#1a1308] border-t-4 border-[#2d1f0f] py-8">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-pixel text-xs text-gray-400 mb-2">© 2025 RELLY WORLD SERVER</p>
+          <p className="text-pixel text-xs text-gray-400 mb-2">© 2025 McBlazeWorld SERVER</p>
           <p className="text-xs text-gray-500">Лучший Minecraft сервер для настоящих игроков ⛏️</p>
         </div>
       </footer>
