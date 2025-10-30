@@ -59,14 +59,6 @@ const Index = () => {
       color: 'from-purple-600 to-pink-600',
     },
     {
-      name: 'КИТ HYDRA + 289.734🪙',
-      price: '40🪙',
-      oldPrice: '99🪙',
-      discount: '-60%',
-      emoji: '🔥',
-      color: 'from-red-500 to-orange-500',
-    },
-    {
       name: 'BULL + 412.589🪙',
       price: '80🪙',
       oldPrice: '199🪙',
