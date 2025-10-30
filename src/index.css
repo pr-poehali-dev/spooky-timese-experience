@@ -52,6 +52,11 @@
     @apply border-border;
   }
 
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: "Rubik", sans-serif;
@@ -64,6 +69,10 @@
   h5,
   h6 {
     font-family: "Press Start 2P", cursive;
+  }
+
+  img {
+    content-visibility: auto;
   }
 }
 

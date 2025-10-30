@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -185,7 +185,7 @@ const Index = () => {
 
       <section id="home" className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center will-change-transform"
           style={{
             backgroundImage: `url('https://cdn.poehali.dev/projects/c418a223-9d4e-4e0f-ba29-3848b5681902/files/ca8722eb-18b9-4611-a6ba-097071ef4eea.jpg')`,
           }}
@@ -272,7 +272,7 @@ const Index = () => {
             {donatePacks.map((pack, idx) => (
               <Card
                 key={idx}
-                className="pixel-corners bg-[#4a3420] border-4 border-[#2d1f0f] hover:scale-105 transition-all hover:shadow-2xl relative overflow-hidden"
+                className="pixel-corners bg-[#4a3420] border-4 border-[#2d1f0f] hover:scale-105 transition-transform duration-200 relative overflow-hidden"
               >
                 <div className="absolute top-2 right-2 bg-[#f5b759] text-black px-2 py-1 text-xs font-bold pixel-corners z-10">
                   {pack.discount}
