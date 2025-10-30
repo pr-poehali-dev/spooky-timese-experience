@@ -291,7 +291,7 @@ const Index = () => {
                             </CardHeader>
                             <CardContent>
                               <div className="bg-[#2d1f0f] p-3 pixel-corners mb-3">
-                                <p className="text-xs text-gray-400 mb-1">Номер карты BlazeWorld:</p>
+                                <p className="text-xs text-gray-400 mb-1">Сбер на оплату:</p>
                                 <div className="flex items-center justify-between gap-2">
                                   <p className="text-sm font-mono text-white">2202 2082 5539 7896</p>
                                   <Button
