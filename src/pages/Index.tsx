@@ -112,6 +112,24 @@ const Index = () => {
     },
   ];
 
+  const videoRolls = [
+    { name: '345.000 РОЛИКОВ', price: '25₽', emoji: '🎬', color: 'from-pink-500 to-rose-500' },
+    { name: '523.000 РОЛИКОВ', price: '35₽', emoji: '🎥', color: 'from-violet-500 to-purple-500' },
+    { name: '789.000 РОЛИКОВ', price: '45₽', emoji: '📹', color: 'from-blue-500 to-indigo-500' },
+    { name: '1.234.000 РОЛИКОВ', price: '55₽', emoji: '🎞️', color: 'from-cyan-500 to-teal-500' },
+    { name: '1.876.000 РОЛИКОВ', price: '65₽', emoji: '📺', color: 'from-green-500 to-emerald-500' },
+    { name: '2.543.000 РОЛИКОВ', price: '75₽', emoji: '🎬', color: 'from-yellow-500 to-amber-500' },
+    { name: '3.421.000 РОЛИКОВ', price: '85₽', emoji: '🎥', color: 'from-orange-500 to-red-500' },
+    { name: '4.567.000 РОЛИКОВ', price: '95₽', emoji: '📹', color: 'from-fuchsia-500 to-pink-500' },
+    { name: '5.789.000 РОЛИКОВ', price: '105₽', emoji: '🎞️', color: 'from-purple-600 to-violet-600' },
+    { name: '6.934.000 РОЛИКОВ', price: '125₽', emoji: '📺', color: 'from-indigo-600 to-blue-600' },
+    { name: '8.123.000 РОЛИКОВ', price: '145₽', emoji: '🎬', color: 'from-sky-600 to-cyan-600' },
+    { name: '9.456.000 РОЛИКОВ', price: '165₽', emoji: '🎥', color: 'from-teal-600 to-green-600' },
+    { name: '10.789.000 РОЛИКОВ', price: '185₽', emoji: '📹', color: 'from-lime-600 to-yellow-600' },
+    { name: '11.234.000 РОЛИКОВ', price: '205₽', emoji: '🎞️', color: 'from-amber-600 to-orange-600' },
+    { name: '12.565.000 РОЛИКОВ', price: '235₽', emoji: '📺', color: 'from-red-600 to-rose-600' },
+  ];
+
   const teamMembers = [
     { name: 'Steve', role: 'Главный администратор', avatar: '👨‍💼' },
     { name: 'Alex', role: 'Тех. администратор', avatar: '👩‍💻' },
@@ -290,6 +308,39 @@ const Index = () => {
                   </div>
                   <Button className="w-full mt-3 pixel-corners bg-[#f5b759] hover:bg-[#f5b759]/90 text-black font-bold text-xs py-2">
                     В корзину
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-b from-[#1a3a0d] to-[#2d5016]">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-pixel text-2xl md:text-4xl text-yellow-400 mb-4">🎬 ПОКУПКА РОЛИКОВ</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
+              Получи рандомные ролики для своего контента! Цены от 25₽ до 235₽
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-7xl mx-auto">
+            {videoRolls.map((roll, idx) => (
+              <Card
+                key={idx}
+                className="pixel-corners bg-[#4a3420] border-4 border-[#2d1f0f] hover:scale-105 transition-transform duration-200 relative overflow-hidden"
+              >
+                <CardHeader className={`bg-gradient-to-br ${roll.color} pixel-corners relative`}>
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">{roll.emoji}</div>
+                    <CardTitle className="text-xs font-bold text-white mb-1 leading-tight">{roll.name}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent className="pt-3 pb-3 text-center">
+                  <div className="text-xl font-bold text-white mb-2">{roll.price}</div>
+                  <Button className="w-full pixel-corners bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-xs py-2">
+                    Купить
                   </Button>
                 </CardContent>
               </Card>
