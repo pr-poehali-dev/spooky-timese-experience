@@ -15,45 +15,100 @@ const Index = () => {
 
   const donatePacks = [
     {
-      name: 'VIP',
-      price: '299₽',
-      icon: 'Star',
+      name: 'COBRA + 7 ДНЕЙ',
+      price: '500₽',
+      oldPrice: '1249₽',
+      discount: '-60%',
+      emoji: '🐍',
       color: 'from-green-500 to-emerald-600',
-      features: [
-        'Цветной ник в чате',
-        'Доступ к /fly',
-        'Приватные регионы x2',
-        '5 точек дома',
-      ],
     },
     {
-      name: 'PREMIUM',
-      price: '599₽',
-      icon: 'Crown',
-      color: 'from-yellow-500 to-orange-500',
-      features: [
-        'Всё из VIP',
-        'Кастомные частицы',
-        'Доступ к /god',
-        'Приватные регионы x5',
-        '10 точек дома',
-        'Креативный режим',
-      ],
+      name: 'D.MODER + 7 ДНЕЙ',
+      price: '1 000₽',
+      oldPrice: '2499₽',
+      discount: '-60%',
+      emoji: '⚒️',
+      color: 'from-blue-500 to-cyan-600',
     },
     {
-      name: 'ELITE',
-      price: '999₽',
-      icon: 'Gem',
-      color: 'from-purple-500 to-pink-500',
-      features: [
-        'Всё из PREMIUM',
-        'Уникальный префикс',
-        'Доступ к /top',
-        'Приватные регионы x10',
-        '20 точек дома',
-        'Кастомные эмодзи',
-        'Приоритет входа',
-      ],
+      name: 'HALLOWEEN + 7 ДНЕЙ',
+      price: '1 600₽',
+      oldPrice: '3999₽',
+      discount: '-60%',
+      emoji: '🎃',
+      color: 'from-orange-500 to-yellow-600',
+    },
+    {
+      name: 'КИТ HYDRA',
+      price: '40₽',
+      oldPrice: '99₽',
+      discount: '-60%',
+      emoji: '🔥',
+      color: 'from-red-500 to-orange-500',
+    },
+    {
+      name: 'D.HELPER + 7 ДНЕЙ',
+      price: '280₽',
+      oldPrice: '699₽',
+      discount: '-60%',
+      emoji: '👕',
+      color: 'from-sky-400 to-blue-500',
+    },
+    {
+      name: 'TIGER + 40 ДНЕЙ',
+      price: '320₽',
+      oldPrice: '799₽',
+      discount: '-60%',
+      emoji: '🐯',
+      color: 'from-orange-600 to-yellow-500',
+    },
+    {
+      name: 'RABBIT + 5 ДНЕЙ',
+      price: '360₽',
+      oldPrice: '899₽',
+      discount: '-60%',
+      emoji: '🐰',
+      color: 'from-blue-500 to-purple-500',
+    },
+    {
+      name: 'HYDRA + 60 ДНЕЙ',
+      price: '400₽',
+      oldPrice: '999₽',
+      discount: '-60%',
+      emoji: '💀',
+      color: 'from-gray-800 to-blue-900',
+    },
+    {
+      name: 'DRAGON + 7 ДНЕЙ',
+      price: '40₽',
+      oldPrice: '99₽',
+      discount: '-60%',
+      emoji: '🐲',
+      color: 'from-purple-600 to-pink-600',
+    },
+    {
+      name: 'BULL + 100 ДНЕЙ',
+      price: '80₽',
+      oldPrice: '199₽',
+      discount: '-60%',
+      emoji: '🐂',
+      color: 'from-amber-600 to-orange-700',
+    },
+    {
+      name: 'DRACULA + 7 ДНЕЙ',
+      price: '160₽',
+      oldPrice: '399₽',
+      discount: '-60%',
+      emoji: '🧛',
+      color: 'from-red-800 to-gray-900',
+    },
+    {
+      name: 'BUNNY + 30 ДНЕЙ',
+      price: '200₽',
+      oldPrice: '499₽',
+      discount: '-60%',
+      emoji: '🐇',
+      color: 'from-pink-500 to-purple-600',
     },
   ];
 
@@ -206,34 +261,35 @@ const Index = () => {
           <div className="text-center mb-12">
             <h2 className="text-pixel text-2xl md:text-4xl text-yellow-400 mb-4">💎 ДОНАТ ПРИВИЛЕГИИ</h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
-              Поддержи сервер и получи крутые возможности! Все донат-привилегии навсегда.
+              Поддержи сервер и получи крутые возможности! Скидки -60% на все товары! 🔥
             </p>
+            <div className="mt-4 inline-block bg-orange-500 text-black px-6 py-2 pixel-corners font-bold">
+              🔥 СКИДОЧКИ! -60%
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
             {donatePacks.map((pack, idx) => (
               <Card
                 key={idx}
-                className="pixel-corners bg-[#4a3420] border-4 border-[#2d1f0f] hover:scale-105 transition-all hover:shadow-2xl"
+                className="pixel-corners bg-[#4a3420] border-4 border-[#2d1f0f] hover:scale-105 transition-all hover:shadow-2xl relative overflow-hidden"
               >
-                <CardHeader className={`bg-gradient-to-br ${pack.color} pixel-corners`}>
+                <div className="absolute top-2 right-2 bg-[#f5b759] text-black px-2 py-1 text-xs font-bold pixel-corners z-10">
+                  {pack.discount}
+                </div>
+                <CardHeader className={`bg-gradient-to-br ${pack.color} pixel-corners relative`}>
                   <div className="text-center">
-                    <Icon name={pack.icon as any} size={48} className="mx-auto mb-3 text-white" />
-                    <CardTitle className="text-pixel text-lg text-white mb-2">{pack.name}</CardTitle>
-                    <div className="text-3xl font-bold text-white">{pack.price}</div>
+                    <div className="text-5xl mb-3">{pack.emoji}</div>
+                    <CardTitle className="text-xs font-bold text-white mb-2 leading-tight">{pack.name}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="pt-6">
-                  <ul className="space-y-3">
-                    {pack.features.map((feature, fidx) => (
-                      <li key={fidx} className="flex items-start gap-2 text-sm">
-                        <Icon name="Check" size={16} className="text-green-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-200">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button className="w-full mt-6 pixel-corners bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-black font-bold">
-                    Купить
+                <CardContent className="pt-4 pb-4 text-center">
+                  <div className="mb-2">
+                    <div className="text-2xl font-bold text-white">{pack.price}</div>
+                    <div className="text-xs text-gray-400 line-through">{pack.oldPrice}</div>
+                  </div>
+                  <Button className="w-full mt-3 pixel-corners bg-[#f5b759] hover:bg-[#f5b759]/90 text-black font-bold text-xs py-2">
+                    В корзину
                   </Button>
                 </CardContent>
               </Card>
