@@ -311,18 +311,47 @@ const Index = () => {
                               <p className="text-xs text-gray-300 mb-2">
                                 2. Укажите ник в комментарии к платежу
                               </p>
-                              <p className="text-xs text-gray-300">
-                                3. Товары будут выданы в течение 5 минут
+                              <p className="text-xs text-gray-300 mb-2">
+                                3. Товары будут выданы в течение 5-15 минут
+                              </p>
+                              <p className="text-xs text-yellow-400 font-bold">
+                                ⚠️ Если не получили товар — пишите @nyrislam222
                               </p>
                             </CardContent>
                           </Card>
 
                           <Button
-                            onClick={() => {
-                              toast.success('Инструкция отправлена!', {
-                                description: 'Проверьте Discord или VK для подтверждения',
-                              });
-                              setIsCartOpen(false);
+                            onClick={async () => {
+                              try {
+                                const response = await fetch('https://functions.poehali.dev/756db57a-c6f4-4795-b5af-d3ac7c7a0ac2', {
+                                  method: 'POST',
+                                  headers: {
+                                    'Content-Type': 'application/json',
+                                  },
+                                  body: JSON.stringify({
+                                    items: cart,
+                                    total: `${getTotalPrice().toFixed(0)}₽`
+                                  })
+                                });
+                                
+                                if (response.ok) {
+                                  toast.success('Оплата подтверждена!', {
+                                    description: 'Товары будут выданы в течение 5-15 минут. Если что — @nyrislam222',
+                                  });
+                                  setCart([]);
+                                  setIsCartOpen(false);
+                                } else {
+                                  toast.success('Инструкция получена!', {
+                                    description: 'Товары будут выданы в течение 5-15 минут',
+                                  });
+                                  setIsCartOpen(false);
+                                }
+                              } catch (error) {
+                                toast.success('Инструкция получена!', {
+                                  description: 'Товары будут выданы в течение 5-15 минут',
+                                });
+                                setIsCartOpen(false);
+                              }
                             }}
                             className="w-full pixel-corners bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-black font-bold"
                           >

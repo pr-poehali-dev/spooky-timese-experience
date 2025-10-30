@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Test purchase notification",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "items": [
+          {
+            "name": "DRAGON + 327.451🪙",
+            "price": "40₽",
+            "emoji": "🐲"
+          }
+        ],
+        "total": "40₽"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
