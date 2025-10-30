@@ -400,7 +400,7 @@ const Index = () => {
               </div>
               <Badge className="bg-green-500 text-black text-lg px-4 py-2 pixel-corners">
                 <Icon name="Users" size={16} className="mr-2" />
-                234 онлайн
+                50 онлайн
               </Badge>
             </div>
             <div className="flex flex-wrap gap-4 justify-center">
