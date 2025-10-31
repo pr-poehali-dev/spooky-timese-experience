@@ -167,7 +167,7 @@ const Index = () => {
   ];
 
   const teamMembers = [
-    { name: 'MrDomer', role: 'Владелец', avatar: '👑' },
+    { name: 'sneil1', role: 'GL.Владелец', avatar: '👑' },
     { name: 'Zenu_987_Tyer', role: 'Владелец', avatar: '👑' },
     { name: 'Mentos228', role: 'GL.ADMIN', avatar: '👨‍💼' },
   ];
