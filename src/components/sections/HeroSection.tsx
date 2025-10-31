@@ -24,7 +24,7 @@ const HeroSection = ({ onNavigate, onCopy }: HeroSectionProps) => {
                 <div className="text-2xl">🎮</div>
                 <div>
                   <p className="text-xs text-gray-400">IP сервера:</p>
-                  <p className="text-pixel text-sm md:text-base text-white">play.mcblazeworld.ru</p>
+                  <p className="text-sm md:text-base text-white font-bold italic">play.mcblazeworld.ru</p>
                 </div>
                 <Button
                   size="icon"
