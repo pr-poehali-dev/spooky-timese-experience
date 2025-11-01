@@ -68,7 +68,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Press Start 2P", cursive;
+    font-family: "Rubik", sans-serif;
   }
 
   img {
@@ -95,7 +95,6 @@
   }
 
   .text-pixel {
-    font-family: "Press Start 2P", cursive;
-    image-rendering: pixelated;
+    font-family: "Rubik", sans-serif;
   }
 }
