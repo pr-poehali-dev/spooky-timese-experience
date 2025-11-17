@@ -131,12 +131,12 @@ const Index = () => {
       color: 'from-blue-500 to-cyan-600',
     },
     {
-      name: 'HALLOWEEN + 892.567🪙',
+      name: 'RUSSIA + 892.567🪙',
       price: '1.600₽',
       oldPrice: '3.999₽',
       discount: '-60%',
-      emoji: '🎃',
-      color: 'from-orange-500 to-yellow-600',
+      emoji: '🇷🇺',
+      color: 'from-blue-500 to-red-600',
     },
   ];
 
