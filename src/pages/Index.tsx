@@ -305,13 +305,10 @@ const Index = () => {
                                 </div>
                               </div>
                               <p className="text-xs text-gray-300 mb-2">
-                                1. Переведите {getTotalPrice().toFixed(0)}₽ на карту
+                                1. Укажите ник в комментарии к платежу
                               </p>
                               <p className="text-xs text-gray-300 mb-2">
-                                2. Укажите ник в комментарии к платежу
-                              </p>
-                              <p className="text-xs text-gray-300 mb-2">
-                                3. Товары будут выданы в течение 5-15 минут
+                                2. Товары будут выданы в течение 5-15 минут
                               </p>
                               <p className="text-xs text-yellow-400 font-bold">
                                 ⚠️ Если не получили товар — пишите @nyrislam222
